@@ -1,1 +1,1 @@
-This is a online platform built on ruby on rails, nokogiri, bootstrap that gives you similar search results for your favourite movies, shows, authors, books, music, games.
+This is a online platform built on ruby on rails that implements the idea of things you may like based on the things you search for using your favourite movies / shows / authors / books / music / games. This online platform is powered by nokogiri and twitter bootstrap.
