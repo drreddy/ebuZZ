@@ -1,3 +1,7 @@
+#change var proxy value to "" if you are not behind a proxy server else use the proxy 
+#and if your proxy server doesn't require a user name and password just use :proxy in place of :proxy_http_basic_authentication 
+#and the "proxy:port" in the value instead of ["proxy:port", "username", "password"]
+
 class StaticPagesController < ApplicationController
 
   def home
