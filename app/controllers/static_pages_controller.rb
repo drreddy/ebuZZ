@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-  	require 'nokogiri'
+    require 'nokogiri'
     require 'open-uri'
     require 'json'
     proxy = "keep your proxy here"    
