@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
     require 'nokogiri'
     require 'open-uri'
     require 'json'
-    proxy = "keep your proxy here"    
+    proxy = ""    
 	if params[:search]
 		if params[:type] == '2'
 		    query = params[:search].to_s
