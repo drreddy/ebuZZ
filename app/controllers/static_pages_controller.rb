@@ -161,7 +161,7 @@ class StaticPagesController < ApplicationController
 			  end
 		end
 		if params[:type] == '1'
-			redirect_to test_path, :notice => "Add a genre to the type of search."
+			redirect_to root_path, :notice => "Add a genre to the type of search."
 		end
 	elsif params[:info]
 		query = params[:info].to_s
