@@ -4,14 +4,15 @@
   <h2>
     Welcome to the e-buZZ favourites search
   </h2>
-	<%= form_tag root_path, :method => 'post' do%>
+    <%= form_tag root_path, :method => 'get' do%>
 		<div style="float:left; width:75%;"><%= text_field_tag :search, params[:search], placeholder: "Search for your favourite movies, shows, authors, books, music, games and get similar results..." %></div>
 		<div style="float:left; padding-left:20px; "><%= select_tag :type, options_for_select([['Genre', 1], ['Movies', 2], ['Music', 3], ['Books', 4], ['Authors', 5], ['Shows', 6], ['Games', 7]]) %></div>
 		<div style="float:left; padding-left:10px; "><%= submit_tag "Search", class: "btn btn-default btn-info", :name => 'nil' %></div>
 	<% end %>
   <div style="padding-top:50px; min-height:270px;">
+  <h2><%= @heading_before %></h2>
   <%= render 'error' if @e == 1 %>
-    <h2><%= @heading %></h2>
+    <h3><%= @heading %></h3>
   <% i=0 %>
 	<% @similarities.each do |sim| %> 
       <div style="float:left; padding:10px; background-color:#eeeeee;"><a href="#<%= i %>" id ="flip<%= i %>" class="test" data-toggle="modal" rel="<%= @simsearch_datatype[i] %>"><b><%= sim %></b></a></div>

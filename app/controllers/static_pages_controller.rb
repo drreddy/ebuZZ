@@ -19,9 +19,11 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
 			end
 			if (doc.at_css('.noresults'))
-				@e = 1
+    			@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
 			else
 				@e = 0
+				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".movies h2").text  
 			  doc.css(".resourcelist span").each do
@@ -44,9 +46,11 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
 			end
 			if (doc.at_css('.noresults'))
-				@e = 1
+    			@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
 			else
 				@e = 0
+				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".music h2").text  
 			  doc.css(".resourcelist span").each do
@@ -69,9 +73,11 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
 			end
 			if (doc.at_css('.noresults'))
-				@e = 1
+    			@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
 			else
 				@e = 0
+				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".books h2").text  
 			  doc.css(".resourcelist span").each do
@@ -94,9 +100,11 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
 			end
 			if (doc.at_css('.noresults'))
-				@e = 1
+    			@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
 			else
 				@e = 0
+				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".authors h2").text  
 			  doc.css(".resourcelist span").each do
@@ -119,9 +127,11 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
 			end
 			if (doc.at_css('.noresults'))
-				@e = 1
+    			@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
 			else
 				@e = 0
+				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".shows h2").text  
 			  doc.css(".resourcelist span").each do
@@ -144,9 +154,11 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
 			end
 			if (doc.at_css('.noresults'))
-				@e = 1
+    			@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
 			else
 				@e = 0
+				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".games h2").text  
 			  doc.css(".resourcelist span").each do
