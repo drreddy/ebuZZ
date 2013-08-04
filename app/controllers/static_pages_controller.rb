@@ -18,13 +18,6 @@ class StaticPagesController < ApplicationController
 			else
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
 			end
-			if (doc.at_css('.noresults'))
-    			@e = 1
-				@heading_before = doc.css(".emmysays .no-list").text
-			else
-				@e = 0
-				@heading_before = doc.css(".no-list").text
-			end
 			 @heading = doc.css(".movies h2").text  
 			  doc.css(".resourcelist span").each do
 				 @simsearch = doc.css(".resourcelist span").map(&:text).join(" | ")
@@ -36,6 +29,15 @@ class StaticPagesController < ApplicationController
 		     	@simsearch_datatype[i] = 'm'				
 				i = i+1
 			  end
+            if (doc.at_css('.noresults'))
+        		@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
+                flash[:error] = @heading_before
+			else
+				@e = 0
+				@heading_before = doc.css(".no-list").text
+                flash[:success] = @heading_before
+			end
 		end
 		if params[:type] == '3'
 			query = params[:search].to_s
@@ -44,13 +46,6 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url))
 			else
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
-			end
-			if (doc.at_css('.noresults'))
-    			@e = 1
-				@heading_before = doc.css(".emmysays .no-list").text
-			else
-				@e = 0
-				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".music h2").text  
 			  doc.css(".resourcelist span").each do
@@ -63,6 +58,15 @@ class StaticPagesController < ApplicationController
 		     	@simsearch_datatype[i] = 's'				
 				i = i+1
 			  end
+            if (doc.at_css('.noresults'))
+        		@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
+                flash[:error] = @heading_before
+			else
+				@e = 0
+				@heading_before = doc.css(".no-list").text
+                flash[:success] = @heading_before
+			end
 		end
 		if params[:type] == '4'
 			query = params[:search].to_s
@@ -71,13 +75,6 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url))
 			else
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
-			end
-			if (doc.at_css('.noresults'))
-    			@e = 1
-				@heading_before = doc.css(".emmysays .no-list").text
-			else
-				@e = 0
-				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".books h2").text  
 			  doc.css(".resourcelist span").each do
@@ -90,6 +87,15 @@ class StaticPagesController < ApplicationController
 		     	@simsearch_datatype[i] = 'b'				
 				i = i+1
 			  end
+            if (doc.at_css('.noresults'))
+        		@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
+                flash[:error] = @heading_before
+			else
+				@e = 0
+				@heading_before = doc.css(".no-list").text
+                flash[:success] = @heading_before
+			end
 		end
 		if params[:type] == '5'
 			query = params[:search].to_s
@@ -98,13 +104,6 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url))
 			else
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
-			end
-			if (doc.at_css('.noresults'))
-    			@e = 1
-				@heading_before = doc.css(".emmysays .no-list").text
-			else
-				@e = 0
-				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".authors h2").text  
 			  doc.css(".resourcelist span").each do
@@ -117,6 +116,15 @@ class StaticPagesController < ApplicationController
 		     	@simsearch_datatype[i] = 'a'				
 				i = i+1
 			  end
+            if (doc.at_css('.noresults'))
+        		@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
+                flash[:error] = @heading_before
+			else
+				@e = 0
+				@heading_before = doc.css(".no-list").text
+                flash[:success] = @heading_before
+			end
 		end
 		if params[:type] == '6'
 			query = params[:search].to_s
@@ -125,13 +133,6 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url))
 			else
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
-			end
-			if (doc.at_css('.noresults'))
-    			@e = 1
-				@heading_before = doc.css(".emmysays .no-list").text
-			else
-				@e = 0
-				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".shows h2").text  
 			  doc.css(".resourcelist span").each do
@@ -144,6 +145,15 @@ class StaticPagesController < ApplicationController
 		     	@simsearch_datatype[i] = 'h'				
 				i = i+1
 			  end
+            if (doc.at_css('.noresults'))
+        		@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
+                flash[:error] = @heading_before
+			else
+				@e = 0
+				@heading_before = doc.css(".no-list").text
+                flash[:success] = @heading_before
+			end
 		end
 		if params[:type] == '7'
 			query = params[:search].to_s
@@ -152,13 +162,6 @@ class StaticPagesController < ApplicationController
 				doc = Nokogiri::HTML(open(url))
 			else
 				doc = Nokogiri::HTML(open(url,:proxy_http_basic_authentication => ["proxy:port", "username", "password"]))
-			end
-			if (doc.at_css('.noresults'))
-    			@e = 1
-				@heading_before = doc.css(".emmysays .no-list").text
-			else
-				@e = 0
-				@heading_before = doc.css(".no-list").text
 			end
 			 @heading = doc.css(".games h2").text  
 			  doc.css(".resourcelist span").each do
@@ -171,9 +174,18 @@ class StaticPagesController < ApplicationController
 		     	@simsearch_datatype[i] = 'g'				
 				i = i+1
 			  end
+            if (doc.at_css('.noresults'))
+        		@e = 1
+				@heading_before = doc.css(".emmysays .no-list").text
+                flash[:error] = @heading_before
+			else
+				@e = 0
+				@heading_before = doc.css(".no-list").text
+                flash[:success] = @heading_before
+			end
 		end
 		if params[:type] == '1'
-			redirect_to root_path, :notice => "Add a genre to the type of search."
+			redirect_to root_path, :flash => { :error => "Add a genre to the type of search." } 
 		end
 	elsif params[:info]
 		query = params[:info].to_s
