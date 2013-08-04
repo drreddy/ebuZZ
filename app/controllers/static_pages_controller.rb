@@ -9,8 +9,6 @@ class StaticPagesController < ApplicationController
     require 'open-uri'
     require 'json'
     proxy = ""
-    flash.discard(:error)
-    flash.discard(:success)
 	if params[:search]
 		if params[:type] == '2'
 		    query = params[:search].to_s
@@ -34,11 +32,11 @@ class StaticPagesController < ApplicationController
             if (doc.at_css('.noresults'))
         		@e = 1
 				@heading_before = doc.css(".emmysays .no-list").text
-                flash[:error] = @heading_before
+                flash.now[:error] = @heading_before
 			else
 				@e = 0
 				@heading_before = doc.css(".no-list").text
-                flash[:success] = @heading_before
+                flash.now[:success] = @heading_before
 			end
 		end
 		if params[:type] == '3'
@@ -63,11 +61,11 @@ class StaticPagesController < ApplicationController
             if (doc.at_css('.noresults'))
         		@e = 1
 				@heading_before = doc.css(".emmysays .no-list").text
-                flash[:error] = @heading_before
+                flash.now[:error] = @heading_before
 			else
 				@e = 0
 				@heading_before = doc.css(".no-list").text
-                flash[:success] = @heading_before
+                flash.now[:success] = @heading_before
 			end
 		end
 		if params[:type] == '4'
@@ -92,11 +90,11 @@ class StaticPagesController < ApplicationController
             if (doc.at_css('.noresults'))
         		@e = 1
 				@heading_before = doc.css(".emmysays .no-list").text
-                flash[:error] = @heading_before
+                flash.now[:error] = @heading_before
 			else
 				@e = 0
 				@heading_before = doc.css(".no-list").text
-                flash[:success] = @heading_before
+                flash.now[:success] = @heading_before
 			end
 		end
 		if params[:type] == '5'
@@ -121,11 +119,11 @@ class StaticPagesController < ApplicationController
             if (doc.at_css('.noresults'))
         		@e = 1
 				@heading_before = doc.css(".emmysays .no-list").text
-                flash[:error] = @heading_before
+                flash.now[:error] = @heading_before
 			else
 				@e = 0
 				@heading_before = doc.css(".no-list").text
-                flash[:success] = @heading_before
+                flash.now[:success] = @heading_before
 			end
 		end
 		if params[:type] == '6'
@@ -150,11 +148,11 @@ class StaticPagesController < ApplicationController
             if (doc.at_css('.noresults'))
         		@e = 1
 				@heading_before = doc.css(".emmysays .no-list").text
-                flash[:error] = @heading_before
+                flash.now[:error] = @heading_before
 			else
 				@e = 0
 				@heading_before = doc.css(".no-list").text
-                flash[:success] = @heading_before
+                flash.now[:success] = @heading_before
 			end
 		end
 		if params[:type] == '7'
@@ -179,11 +177,11 @@ class StaticPagesController < ApplicationController
             if (doc.at_css('.noresults'))
         		@e = 1
 				@heading_before = doc.css(".emmysays .no-list").text
-                flash[:error] = @heading_before
+                flash.now[:error] = @heading_before
 			else
 				@e = 0
 				@heading_before = doc.css(".no-list").text
-                flash[:success] = @heading_before
+                flash.now[:success] = @heading_before
 			end
 		end
 		if params[:type] == '1'
