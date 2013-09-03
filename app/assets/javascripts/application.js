@@ -23,8 +23,8 @@ $(function() {
 				  		var actdata = data.aInfo.teaser;
 					  	$(dest + ' .modal-body .content').html(actdata);
 					  	if(data.hasOwnProperty('aVideo')){
-					  		var url = data.aVideo.link;
-					  		var video = "<br/><hr/><center><embed src='"+url+"' type='application/x-shockwave-flash' allowfullscreen='true' width='360' height='222' title='Adobe Flash Player'></center><hr/>";
+					  		var vidid = data.aVideo.videoID;
+					  		var video = "<br/><hr/><center><embed src='http://www.youtube.com/v/"+vidid+"' type='application/x-shockwave-flash' allowfullscreen='true' width='360' height='222' title='Adobe Flash Player'></center><hr/>";
 					 		$(dest + ' .modal-body .content').append(video);
 					  	}
 					  	$(this).removeClass('test').addClass('done');
